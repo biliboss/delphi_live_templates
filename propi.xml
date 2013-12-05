@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="propi" invoke="manual">
+		<description>
+			Creates a property declaration with any getter and setter
+		</description>
+		<author>
+			Embarcadero
+		</author>
+        <point name="name">
+            <text>
+                name
+            </text>
+            <hint>
+                The property name
+            </hint>
+        </point>
+        <point name="type">
+            <text>
+                type
+            </text>
+            <hint>
+                Type of the property
+            </hint>
+        </point>
+        <script language="Delphi" onenter="false" onleave="true">
+          InvokeClassCompletion;
+		</script>
+		<code language="Delphi" delimiter="|"><![CDATA[     
+function Get|name|:|type|;                                  
+procedure Set|name|(Const value:|type|);$.$
+|end|
+property |name|: |type| read Get|name| write Set|name|;
+]]>
+		</code>
+	</template>
+</codetemplate>
